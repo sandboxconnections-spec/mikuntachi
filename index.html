@@ -130,7 +130,7 @@ ruby rt{font-size:.5em; letter-spacing:0; font-weight:700}
 .hee p{margin:0}
 .js .hee[hidden]{display:none}
 html:not(.js) .map-note{display:none}
-.viz{display:grid; grid-template-columns:200px 1fr; gap:32px; align-items:center; margin-top:48px; padding:28px 32px; background:var(--sea); border-radius:14px}
+.viz{display:grid; grid-template-columns:200px 1fr; gap:32px; align-items:center; margin-top:8px; padding:28px 32px; background:var(--sea); border-radius:14px}
 .viz h4{margin:0 0 6px; font-weight:900; font-size:20px; line-height:1.8}
 .viz p{margin:0 0 16px}
 
@@ -323,7 +323,7 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
           </div>
           <div>
             <h4>わ<ruby>君<rt>くん</rt></ruby>のわからん</h4>
-            <p><ruby>七尾<rt>ななお</rt></ruby>の「へぇ〜！」の3<ruby>択<rt>たく</rt></ruby>クイズ</p>
+            <p><ruby>七尾<rt>ななお</rt></ruby>の3<ruby>択<rt>たく</rt></ruby>クイズ</p>
             <span class="since">Q.01（11<ruby>月<rt>がつ</rt></ruby>8<ruby>日<rt>にち</rt></ruby>）から<ruby>続<rt>つづ</rt></ruby>いています</span>
           </div>
         </div>
@@ -337,45 +337,7 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
         <p class="org" style="margin-top:14px"><ruby>七尾<rt>ななお</rt></ruby><ruby>地域<rt>ちいき</rt></ruby>づくり<ruby>協<rt>きょう</rt></ruby><ruby>議<rt>ぎ</rt></ruby><ruby>会<rt>かい</rt></ruby>ネットワーク<ruby>会議<rt>かいぎ</rt></ruby>のインスタグラムです。</p>
       </article>
 
-      <article class="play-card">
-        <h3 class="play-h"><span class="no">3</span><span><span class="verb">みつける</span>　<span class="nw">4つの<ruby>地区<rt>ちく</rt></ruby>の「へぇ〜！」</span></span></h3>
-        <div class="map" role="tablist">
-          <button id="m-misogi" role="tab" aria-controls="h-misogi" aria-selected="true">
-            <span class="isle"><svg viewBox="0 0 320 190" aria-hidden="true"><use href="#shape-a" y="62" fill="var(--shade)" opacity=".4" filter="url(#blur)"/><use href="#shape-a" y="6" fill="var(--ao-side)"/><use href="#shape-a" y="12" fill="var(--ao-side)"/><use href="#shape-a" y="18" fill="var(--ao-side)"/><use href="#shape-a" y="24" fill="var(--ao-side)"/><use href="#shape-a" fill="var(--ao)"/></svg><img class="chara" src="img/chara-mi.png" alt=""></span>
-            <span class="chiku-name"><ruby>御祓<rt>みそぎ</rt></ruby></span>
-          </button>
-          <button id="m-wakura" role="tab" aria-controls="h-wakura" aria-selected="false">
-            <span class="isle"><svg viewBox="0 0 320 190" aria-hidden="true"><use href="#shape-d" y="62" fill="var(--shade)" opacity=".4" filter="url(#blur)"/><use href="#shape-d" y="6" fill="var(--murasaki-side)"/><use href="#shape-d" y="12" fill="var(--murasaki-side)"/><use href="#shape-d" y="18" fill="var(--murasaki-side)"/><use href="#shape-d" y="24" fill="var(--murasaki-side)"/><use href="#shape-d" fill="var(--murasaki)"/></svg><img class="chara" src="img/chara-wa.png" alt=""></span>
-            <span class="chiku-name"><ruby>和倉<rt>わくら</rt></ruby></span>
-          </button>
-          <button id="m-sodegae" role="tab" aria-controls="h-sodegae" aria-selected="false">
-            <span class="isle"><svg viewBox="0 0 320 190" aria-hidden="true"><use href="#shape-c" y="62" fill="var(--shade)" opacity=".4" filter="url(#blur)"/><use href="#shape-c" y="6" fill="var(--ki-side)"/><use href="#shape-c" y="12" fill="var(--ki-side)"/><use href="#shape-c" y="18" fill="var(--ki-side)"/><use href="#shape-c" y="24" fill="var(--ki-side)"/><use href="#shape-c" fill="var(--ki)"/></svg><img class="chara" src="img/chara-so.png" alt=""></span>
-            <span class="chiku-name"><ruby>袖ケ江<rt>そでがえ</rt></ruby></span>
-          </button>
-          <button id="m-yatagou" role="tab" aria-controls="h-yatagou" aria-selected="false">
-            <span class="isle"><svg viewBox="0 0 320 190" aria-hidden="true"><use href="#shape-b" y="62" fill="var(--shade)" opacity=".4" filter="url(#blur)"/><use href="#shape-b" y="6" fill="var(--midori-side)"/><use href="#shape-b" y="12" fill="var(--midori-side)"/><use href="#shape-b" y="18" fill="var(--midori-side)"/><use href="#shape-b" y="24" fill="var(--midori-side)"/><use href="#shape-b" fill="var(--midori)"/></svg><img class="chara" src="img/chara-ya.png" alt=""></span>
-            <span class="chiku-name"><ruby>矢田郷<rt>やたごう</rt></ruby></span>
-          </button>
-        </div>
-        <p class="map-note"><ruby>島<rt>しま</rt></ruby>をおすと、その<ruby>地区<rt>ちく</rt></ruby>の「へぇ〜！」が<ruby>出<rt>で</rt></ruby>ます。</p>
-        <div class="hee" id="h-misogi" role="tabpanel" aria-labelledby="m-misogi">
-          <h4><ruby>御祓<rt>みそぎ</rt></ruby>の「へぇ〜！」</h4>
-          <p><ruby>川<rt>かわ</rt></ruby>の<ruby>名前<rt>なまえ</rt></ruby>が、そのまま<ruby>地区<rt>ちく</rt></ruby>の<ruby>名前<rt>なまえ</rt></ruby>になっているのは、<ruby>七尾<rt>ななお</rt></ruby>の15<ruby>地区<rt>ちく</rt></ruby>で<ruby>御祓<rt>みそぎ</rt></ruby>だけです。</p>
-        </div>
-        <div class="hee" id="h-wakura" role="tabpanel" aria-labelledby="m-wakura">
-          <h4><ruby>和倉<rt>わくら</rt></ruby>の「へぇ〜！」</h4>
-          <p>1641<ruby>年<rt>ねん</rt></ruby>、<ruby>和倉<rt>わくら</rt></ruby>のお<ruby>湯<rt>ゆ</rt></ruby>は<ruby>海<rt>うみ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>の<ruby>島<rt>しま</rt></ruby>からわいていて、そこにお<ruby>風呂<rt>ふろ</rt></ruby>の<ruby>建物<rt>たてもの</rt></ruby>がありました。</p>
-        </div>
-        <div class="hee" id="h-sodegae" role="tabpanel" aria-labelledby="m-sodegae">
-          <h4><ruby>袖ケ江<rt>そでがえ</rt></ruby>の「へぇ〜！」</h4>
-          <p><ruby>江戸時代<rt>えどじだい</rt></ruby>の<ruby>所<rt>ところ</rt></ruby><ruby>口<rt>ぐち</rt></ruby><ruby>町<rt>まち</rt></ruby>の<ruby>絵図<rt>えず</rt></ruby>は、<ruby>北<rt>きた</rt></ruby>が<ruby>下<rt>した</rt></ruby>（<ruby>海<rt>うみ</rt></ruby>の<ruby>側<rt>がわ</rt></ruby>）になるようにかかれています。</p>
-        </div>
-        <div class="hee" id="h-yatagou" role="tabpanel" aria-labelledby="m-yatagou">
-          <h4><ruby>矢田郷<rt>やたごう</rt></ruby>の「へぇ〜！」</h4>
-          <p>1918<ruby>年<rt>ねん</rt></ruby>の<ruby>地図<rt>ちず</rt></ruby>には、「<ruby>矢田郷村<rt>やたごうむら</rt></ruby>」とのっています。</p>
-        </div>
-        
-      </article>
+      
 
     </div>
   </div></div>
