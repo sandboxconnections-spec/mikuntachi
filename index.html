@@ -4,13 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>みくんたち｜七尾の町にすむ、ひらがなの精霊</title>
-<meta name="description" content="み・わ・そ・やは、七尾の町にすむ、ひらがなの精霊です。スタンプラリーとインスタグラムで会えます。">
+<title>みくんたち｜七尾市の地区の名前から生まれた、ひらがなの子</title>
+<meta name="description" content="み・わ・そ・やは、七尾市の地区の名前から生まれた、ひらがなの子です。スタンプラリーとインスタグラムで会えます。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@700;900&display=swap" rel="stylesheet">
 <style>
-/* トーンとマナー＝11/26 本人が指した「島と海」の見える化（visualizeof770）
+/* コンセプト＝【七尾市の地区の名前から 生まれた、ひらがなの子】（11/26 本人）
+   トーンとマナー＝11/26 本人が指した「島と海」の見える化（visualizeof770）
    海＝うすい水色に白い波／島＝平らな上面＋濃い側面＋海に落ちる影／札と箱＝白地に緑の枠／ボタン＝緑のまる
    島の色＝地区の色（7/2 制作チームMTG：御祓=青・袖ケ江=黄・和倉=紫・矢田郷=緑）
    v0.3（11/26 5人の講評から）＝いま遊べる物を最初の画面に／あそびかたを2段目に／箱を減らして海に直接置く／みが箱のかげから体を半分 */
@@ -59,7 +60,7 @@ ruby rt{font-size:.5em; letter-spacing:0; font-weight:700}
 .top{position:relative; max-width:1280px; margin:0 auto; height:760px; overflow:hidden}
 .top .title{position:absolute; left:6%; top:28px; margin:0}
 .top h1{margin:0; font-weight:900; font-size:64px; line-height:1.1; letter-spacing:.06em}
-.top .tagline{margin:10px 0 0; font-weight:900; font-size:20px; line-height:2}
+.top .tagline{margin:10px 0 0; font-weight:900; font-size:21px; line-height:1.9}
 .top .land{position:absolute; right:-40px; top:120px; width:300px}
 .top .land svg{display:block; width:100%; height:auto; overflow:visible}
 .top .isle{position:absolute; animation:float 7s ease-in-out infinite}
@@ -70,6 +71,7 @@ ruby rt{font-size:.5em; letter-spacing:0; font-weight:700}
 .top .isle .chara{height:150px}
 .top .i-ya .chara{height:130px}
 .tag{position:absolute; left:50%; top:44cqw; transform:translateX(-50%); background:#fff; border:3px solid var(--leaf); border-radius:999px; padding:0 14px; font-weight:900; font-size:15px; line-height:1.9; white-space:nowrap}
+.tag em{font-style:normal; font-size:1.45em; line-height:1; margin-right:1px}
 @keyframes float{0%,100%{translate:0 0}50%{translate:0 -6px}}
 @media (prefers-reduced-motion: reduce){.top .isle{animation:none}}
 .now{position:absolute; left:63%; top:430px; width:360px; display:block; text-decoration:none; background:#fff; border:4px solid var(--leaf); border-radius:14px; padding:18px 22px 20px; line-height:1.9; z-index:2}
@@ -98,6 +100,9 @@ ruby rt{font-size:.5em; letter-spacing:0; font-weight:700}
 .info dt{justify-self:start; align-self:start; margin-top:4px}
 .info dd{margin:0}
 .org{font-size:14px; line-height:2}
+.more{margin:-8px 0 24px; border:2px solid var(--leaf); border-radius:14px; padding:4px 20px}
+.more summary{cursor:pointer; font-weight:900; color:var(--leaf-dark); padding:8px 0}
+.more .info{margin:0 0 12px; border-bottom:0}
 .count{display:inline-block; background:var(--ki); border-radius:999px; padding:0 14px; line-height:1.9}
 .btn{display:inline-block; background:var(--leaf); color:#fff; border-radius:999px; padding:10px 28px; text-decoration:none; font-weight:900; font-size:16px; line-height:1.6}
 .btn:hover{background:var(--leaf-dark)}
@@ -135,8 +140,10 @@ html:not(.js) .map-note{display:none}
 .intro p{margin:0 0 1.2em; font-size:17px}
 
 /* 段4 キャラクター（箱なし＝4人の島が海に浮かぶ） */
+.lead{text-align:center; margin:-12px auto 32px; max-width:760px; font-size:17px}
 .chara-tabs{display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin:0 0 40px; padding:0; list-style:none}
 .chara-tabs button{appearance:none; background:#fff; border:3px solid var(--leaf); border-radius:999px; padding:4px 20px 2px; cursor:pointer; font:inherit; font-weight:900; font-size:18px; line-height:1.8; color:inherit}
+.chara-tabs button em{font-style:normal; font-size:1.4em; line-height:1}
 .chara-tabs button[aria-selected="true"]{background:var(--leaf); color:#fff}
 .chara-panel{display:grid; grid-template-columns:5fr 6fr; gap:48px; align-items:center}
 .chara-stage{max-width:380px; width:100%; margin:0 auto; padding-top:300px}
@@ -240,7 +247,6 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
     <a class="logo" href="#top">みくんたち</a>
     <ul class="nav">
       <li><a href="#play">あそびかた</a></li>
-      <li><a href="#about">みくんたちって？</a></li>
       <li><a href="#character">キャラクター</a></li>
       <li><a href="#news">おしらせ</a></li>
     </ul>
@@ -253,7 +259,7 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
 <section class="top" id="top">
   <div class="title">
     <h1>みくんたち</h1>
-    <p class="tagline"><ruby>七尾<rt>ななお</rt></ruby>の<ruby>町<rt>まち</rt></ruby>にすむ、ひらがなの<ruby>精霊<rt>せいれい</rt></ruby></p>
+    <p class="tagline"><span class="nw"><ruby>七尾市<rt>ななおし</rt></ruby>の<ruby>地区<rt>ちく</rt></ruby>の<ruby>名前<rt>なまえ</rt></ruby>から</span><br><span class="nw"><ruby>生<rt>う</rt></ruby>まれた、ひらがなの<ruby>子<rt>こ</rt></ruby></span></p>
   </div>
 
   <div class="land" aria-hidden="true">
@@ -264,10 +270,10 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
     </svg>
   </div>
 
-  <div class="isle i-mi"><svg viewBox="0 0 320 190" aria-hidden="true"><use href="#shape-a" y="62" fill="var(--shade)" opacity=".4" filter="url(#blur)"/><use href="#shape-a" y="6" fill="var(--ao-side)"/><use href="#shape-a" y="12" fill="var(--ao-side)"/><use href="#shape-a" y="18" fill="var(--ao-side)"/><use href="#shape-a" y="24" fill="var(--ao-side)"/><use href="#shape-a" fill="var(--ao)"/></svg><img class="chara" src="img/top-mi.png" alt="み" width="359" height="640"><span class="tag">み｜<ruby>御祓<rt>みそぎ</rt></ruby></span></div>
-  <div class="isle i-ya"><svg viewBox="0 0 320 190" aria-hidden="true"><use href="#shape-b" y="62" fill="var(--shade)" opacity=".4" filter="url(#blur)"/><use href="#shape-b" y="6" fill="var(--midori-side)"/><use href="#shape-b" y="12" fill="var(--midori-side)"/><use href="#shape-b" y="18" fill="var(--midori-side)"/><use href="#shape-b" y="24" fill="var(--midori-side)"/><use href="#shape-b" fill="var(--midori)"/></svg><img class="chara" src="img/top-ya.png" alt="や" width="409" height="640"><span class="tag">や｜<ruby>矢田郷<rt>やたごう</rt></ruby></span></div>
-  <div class="isle i-so"><svg viewBox="0 0 320 190" aria-hidden="true"><use href="#shape-c" y="62" fill="var(--shade)" opacity=".4" filter="url(#blur)"/><use href="#shape-c" y="6" fill="var(--ki-side)"/><use href="#shape-c" y="12" fill="var(--ki-side)"/><use href="#shape-c" y="18" fill="var(--ki-side)"/><use href="#shape-c" y="24" fill="var(--ki-side)"/><use href="#shape-c" fill="var(--ki)"/></svg><img class="chara" src="img/top-so.png" alt="そ" width="449" height="640"><span class="tag">そ｜<ruby>袖ケ江<rt>そでがえ</rt></ruby></span></div>
-  <div class="isle i-wa"><svg viewBox="0 0 320 190" aria-hidden="true"><use href="#shape-d" y="62" fill="var(--shade)" opacity=".4" filter="url(#blur)"/><use href="#shape-d" y="6" fill="var(--murasaki-side)"/><use href="#shape-d" y="12" fill="var(--murasaki-side)"/><use href="#shape-d" y="18" fill="var(--murasaki-side)"/><use href="#shape-d" y="24" fill="var(--murasaki-side)"/><use href="#shape-d" fill="var(--murasaki)"/></svg><img class="chara" src="img/top-wa.png" alt="わ" width="379" height="640"><span class="tag">わ｜<ruby>和倉<rt>わくら</rt></ruby></span></div>
+  <div class="isle i-mi"><svg viewBox="0 0 320 190" aria-hidden="true"><use href="#shape-a" y="62" fill="var(--shade)" opacity=".4" filter="url(#blur)"/><use href="#shape-a" y="6" fill="var(--ao-side)"/><use href="#shape-a" y="12" fill="var(--ao-side)"/><use href="#shape-a" y="18" fill="var(--ao-side)"/><use href="#shape-a" y="24" fill="var(--ao-side)"/><use href="#shape-a" fill="var(--ao)"/></svg><img class="chara" src="img/top-mi.png" alt="み" width="359" height="640"><span class="tag"><em>み</em>そぎ</span></div>
+  <div class="isle i-ya"><svg viewBox="0 0 320 190" aria-hidden="true"><use href="#shape-b" y="62" fill="var(--shade)" opacity=".4" filter="url(#blur)"/><use href="#shape-b" y="6" fill="var(--midori-side)"/><use href="#shape-b" y="12" fill="var(--midori-side)"/><use href="#shape-b" y="18" fill="var(--midori-side)"/><use href="#shape-b" y="24" fill="var(--midori-side)"/><use href="#shape-b" fill="var(--midori)"/></svg><img class="chara" src="img/top-ya.png" alt="や" width="409" height="640"><span class="tag"><em>や</em>たごう</span></div>
+  <div class="isle i-so"><svg viewBox="0 0 320 190" aria-hidden="true"><use href="#shape-c" y="62" fill="var(--shade)" opacity=".4" filter="url(#blur)"/><use href="#shape-c" y="6" fill="var(--ki-side)"/><use href="#shape-c" y="12" fill="var(--ki-side)"/><use href="#shape-c" y="18" fill="var(--ki-side)"/><use href="#shape-c" y="24" fill="var(--ki-side)"/><use href="#shape-c" fill="var(--ki)"/></svg><img class="chara" src="img/top-so.png" alt="そ" width="449" height="640"><span class="tag"><em>そ</em>でがえ</span></div>
+  <div class="isle i-wa"><svg viewBox="0 0 320 190" aria-hidden="true"><use href="#shape-d" y="62" fill="var(--shade)" opacity=".4" filter="url(#blur)"/><use href="#shape-d" y="6" fill="var(--murasaki-side)"/><use href="#shape-d" y="12" fill="var(--murasaki-side)"/><use href="#shape-d" y="18" fill="var(--murasaki-side)"/><use href="#shape-d" y="24" fill="var(--murasaki-side)"/><use href="#shape-d" fill="var(--murasaki)"/></svg><img class="chara" src="img/top-wa.png" alt="わ" width="379" height="640"><span class="tag"><em>わ</em>くら</span></div>
 
   <a class="now" href="#play">
     <span class="now-label">いま あそべる</span>
@@ -290,13 +296,19 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
         <p><ruby>七尾<rt>ななお</rt></ruby>の4<ruby>地区<rt>ちく</rt></ruby>・16か<ruby>所<rt>しょ</rt></ruby>で、なぞを<ruby>解<rt>と</rt></ruby>きながら<ruby>町<rt>まち</rt></ruby>を<ruby>歩<rt>ある</rt></ruby>くスタンプラリーです。</p>
         <dl class="info">
           <dt class="fuda">いつまで</dt><dd>2026<ruby>年<rt>ねん</rt></ruby>7<ruby>月<rt>がつ</rt></ruby>31<ruby>日<rt>にち</rt></ruby>から 12<ruby>月<rt>がつ</rt></ruby>20<ruby>日<rt>にち</rt></ruby>まで</dd>
-          <dt class="fuda">だれが</dt><dd><ruby>市内<rt>しない</rt></ruby>の<ruby>小<rt>しょう</rt></ruby><ruby>中<rt>ちゅう</rt></ruby><ruby>学<rt>がく</rt></ruby><ruby>生<rt>せい</rt></ruby>とそのご<ruby>家族<rt>かぞく</rt></ruby></dd>
-          <dt class="fuda">はじめかた</dt><dd>4<ruby>地区<rt>ちく</rt></ruby>のコミュニティセンター（<ruby>御祓<rt>みそぎ</rt></ruby>・<ruby>和倉<rt>わくら</rt></ruby>・<ruby>袖ケ江<rt>そでがえ</rt></ruby>・<ruby>矢田郷<rt>やたごう</rt></ruby>）の<ruby>受付<rt>うけつけ</rt></ruby>で<ruby>台紙<rt>だいし</rt></ruby>をもらい、<ruby>受付<rt>うけつけ</rt></ruby>のQRを<ruby>読<rt>よ</rt></ruby>んで<ruby>公式<rt>こうしき</rt></ruby>LINEに<ruby>登録<rt>とうろく</rt></ruby>します。</dd>
-          <dt class="fuda">かかる日にち</dt><dd>1<ruby>日<rt>にち</rt></ruby>でぜんぶ<ruby>回<rt>まわ</rt></ruby>らなくて<ruby>大丈夫<rt>だいじょうぶ</rt></ruby>です。12<ruby>月<rt>がつ</rt></ruby>20<ruby>日<rt>にち</rt></ruby>まで、<ruby>何日<rt>なんにち</rt></ruby>かけても<ruby>遊<rt>あそ</rt></ruby>べます。<ruby>台紙<rt>だいし</rt></ruby>は<ruby>持<rt>も</rt></ruby>ち<ruby>帰<rt>かえ</rt></ruby>れます。</dd>
-          <dt class="fuda">スマホがないとき</dt><dd><ruby>受付<rt>うけつけ</rt></ruby>で<ruby>紙<rt>かみ</rt></ruby>の「<ruby>第<rt>だい</rt></ruby>1のなぞ」をもらえます。<ruby>台紙<rt>だいし</rt></ruby>だけでも、ぜんぶの<ruby>場所<rt>ばしょ</rt></ruby>を<ruby>回<rt>まわ</rt></ruby>れます。</dd>
-          <dt class="fuda">おねがい</dt><dd><ruby>道路<rt>どうろ</rt></ruby>や<ruby>山<rt>やま</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>の<ruby>場所<rt>ばしょ</rt></ruby>もあります。おうちの<ruby>人<rt>ひと</rt></ruby>といっしょに<ruby>回<rt>まわ</rt></ruby>ってください。<ruby>建物<rt>たてもの</rt></ruby>の<ruby>中<rt>なか</rt></ruby>のスタンプは、その<ruby>建物<rt>たてもの</rt></ruby>が<ruby>開<rt>あ</rt></ruby>いている<ruby>時間<rt>じかん</rt></ruby>だけ<ruby>押<rt>お</rt></ruby>せます。</dd>
-          <dt class="fuda">ちゅうせんかい</dt><dd>12<ruby>月<rt>がつ</rt></ruby>25<ruby>日<rt>にち</rt></ruby>。<ruby>当<rt>あ</rt></ruby>たった<ruby>人<rt>ひと</rt></ruby>には、<ruby>主催<rt>しゅさい</rt></ruby>から<ruby>連絡<rt>れんらく</rt></ruby>します。</dd>
+          <dt class="fuda">はじめかた</dt><dd>4<ruby>地区<rt>ちく</rt></ruby>のコミュニティセンター（<ruby>御祓<rt>みそぎ</rt></ruby>・<ruby>和倉<rt>わくら</rt></ruby>・<ruby>袖ケ江<rt>そでがえ</rt></ruby>・<ruby>矢田郷<rt>やたごう</rt></ruby>）で<ruby>台紙<rt>だいし</rt></ruby>をもらって、スタート</dd>
+          <dt class="fuda">ちゅうせんかい</dt><dd>12<ruby>月<rt>がつ</rt></ruby>25<ruby>日<rt>にち</rt></ruby></dd>
         </dl>
+        <details class="more">
+          <summary>おうちの<ruby>人<rt>ひと</rt></ruby>へ（くわしく）</summary>
+          <dl class="info">
+            <dt class="fuda">だれが</dt><dd><ruby>市内<rt>しない</rt></ruby>の<ruby>小<rt>しょう</rt></ruby><ruby>中<rt>ちゅう</rt></ruby><ruby>学<rt>がく</rt></ruby><ruby>生<rt>せい</rt></ruby>とそのご<ruby>家族<rt>かぞく</rt></ruby></dd>
+            <dt class="fuda">はじめかた</dt><dd><ruby>受付<rt>うけつけ</rt></ruby>で<ruby>台紙<rt>だいし</rt></ruby>をもらい、<ruby>受付<rt>うけつけ</rt></ruby>のQRを<ruby>読<rt>よ</rt></ruby>んで<ruby>公式<rt>こうしき</rt></ruby>LINEに<ruby>登録<rt>とうろく</rt></ruby>します。スマホがないときは、<ruby>受付<rt>うけつけ</rt></ruby>で<ruby>紙<rt>かみ</rt></ruby>の「<ruby>第<rt>だい</rt></ruby>1のなぞ」をもらえます。</dd>
+            <dt class="fuda">かかる日にち</dt><dd>1<ruby>日<rt>にち</rt></ruby>でぜんぶ<ruby>回<rt>まわ</rt></ruby>らなくて<ruby>大丈夫<rt>だいじょうぶ</rt></ruby>です。12<ruby>月<rt>がつ</rt></ruby>20<ruby>日<rt>にち</rt></ruby>まで、<ruby>何日<rt>なんにち</rt></ruby>かけても<ruby>遊<rt>あそ</rt></ruby>べます。</dd>
+            <dt class="fuda">おねがい</dt><dd><ruby>道路<rt>どうろ</rt></ruby>や<ruby>山<rt>やま</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>の<ruby>場所<rt>ばしょ</rt></ruby>もあります。おうちの<ruby>人<rt>ひと</rt></ruby>といっしょに<ruby>回<rt>まわ</rt></ruby>ってください。<ruby>建物<rt>たてもの</rt></ruby>の<ruby>中<rt>なか</rt></ruby>のスタンプは、<ruby>開<rt>あ</rt></ruby>いている<ruby>時間<rt>じかん</rt></ruby>だけ<ruby>押<rt>お</rt></ruby>せます。</dd>
+            <dt class="fuda">ちゅうせんかい</dt><dd><ruby>当<rt>あ</rt></ruby>たった<ruby>人<rt>ひと</rt></ruby>には、<ruby>主催<rt>しゅさい</rt></ruby>から<ruby>連絡<rt>れんらく</rt></ruby>します。</dd>
+          </dl>
+        </details>
         <p><span class="count">いま302<ruby>人<rt>にん</rt></ruby>が<ruby>参加<rt>さんか</rt></ruby>しています</span>（11<ruby>月<rt>がつ</rt></ruby>26<ruby>日<rt>にち</rt></ruby>）</p>
         <p class="org"><ruby>主催<rt>しゅさい</rt></ruby>：<ruby>七尾<rt>ななお</rt></ruby><ruby>地域<rt>ちいき</rt></ruby>づくり<ruby>協<rt>きょう</rt></ruby><ruby>議<rt>ぎ</rt></ruby><ruby>会<rt>かい</rt></ruby>ネットワーク<ruby>会議<rt>かいぎ</rt></ruby>（<ruby>御祓<rt>みそぎ</rt></ruby>・<ruby>袖ケ江<rt>そでがえ</rt></ruby>・<ruby>矢田郷<rt>やたごう</rt></ruby>・<ruby>和倉<rt>わくら</rt></ruby>）<br><ruby>企画<rt>きかく</rt></ruby>・<ruby>運営<rt>うんえい</rt></ruby>：<ruby>合<rt>ごう</rt></ruby><ruby>同<rt>どう</rt></ruby><ruby>会<rt>がい</rt></ruby><ruby>社<rt>しゃ</rt></ruby>SandBoxConnections</p>
       </article>
@@ -306,12 +318,12 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
         <div class="series">
           <div>
             <h4>み<ruby>君<rt>くん</rt></ruby>を<ruby>探<rt>さが</rt></ruby>せ！</h4>
-            <p><ruby>七尾<rt>ななお</rt></ruby>の<ruby>写真<rt>しゃしん</rt></ruby>の<ruby>中<rt>なか</rt></ruby>にかくれた「み」を<ruby>探<rt>さが</rt></ruby>します。</p>
+            <p><ruby>写真<rt>しゃしん</rt></ruby>にかくれた「み」を<ruby>探<rt>さが</rt></ruby>す</p>
             <span class="since">No.01（10<ruby>月<rt>がつ</rt></ruby>1<ruby>日<rt>にち</rt></ruby>）から<ruby>続<rt>つづ</rt></ruby>いています</span>
           </div>
           <div>
             <h4>わ<ruby>君<rt>くん</rt></ruby>のわからん</h4>
-            <p><ruby>七尾<rt>ななお</rt></ruby>の「へぇ〜！」を、3<ruby>択<rt>たく</rt></ruby>のクイズで<ruby>出<rt>だ</rt></ruby>します。</p>
+            <p><ruby>七尾<rt>ななお</rt></ruby>の「へぇ〜！」の3<ruby>択<rt>たく</rt></ruby>クイズ</p>
             <span class="since">Q.01（11<ruby>月<rt>がつ</rt></ruby>8<ruby>日<rt>にち</rt></ruby>）から<ruby>続<rt>つづ</rt></ruby>いています</span>
           </div>
         </div>
@@ -320,7 +332,7 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
           <a href="https://www.instagram.com/770chiiki_network/" target="_blank" rel="noopener"><img src="img/ig-mi-04.jpg" alt="インスタの投稿「み君を探せ！」No.04" width="564" height="705" loading="lazy"><span>み<ruby>君<rt>くん</rt></ruby>を<ruby>探<rt>さが</rt></ruby>せ！ No.04</span></a>
           <a href="https://www.instagram.com/770chiiki_network/" target="_blank" rel="noopener"><img src="img/ig-wa-01.jpg" alt="インスタの投稿「わ君のわからん」Q.01" width="564" height="705" loading="lazy"><span>わ<ruby>君<rt>くん</rt></ruby>のわからん Q.01</span></a>
         </div>
-        <p class="shelf-note"><ruby>写真<rt>しゃしん</rt></ruby>の<ruby>中<rt>なか</rt></ruby>にかくれた「み」を<ruby>探<rt>さが</rt></ruby>してみてね。<ruby>答<rt>こた</rt></ruby>えはインスタにあります。</p>
+        <p class="shelf-note">「み」を<ruby>探<rt>さが</rt></ruby>してみてね。<ruby>答<rt>こた</rt></ruby>えはインスタで。</p>
         <a class="btn" href="https://www.instagram.com/770chiiki_network/" target="_blank" rel="noopener">@770chiiki_network をフォローする</a>
         <p class="org" style="margin-top:14px"><ruby>七尾<rt>ななお</rt></ruby><ruby>地域<rt>ちいき</rt></ruby>づくり<ruby>協<rt>きょう</rt></ruby><ruby>議<rt>ぎ</rt></ruby><ruby>会<rt>かい</rt></ruby>ネットワーク<ruby>会議<rt>かいぎ</rt></ruby>のインスタグラムです。</p>
       </article>
@@ -369,28 +381,17 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
   </div></div>
 </section>
 
-<!-- 段3 みくんたちって？ -->
-<section class="sec" id="about">
-  <div class="wrap">
-    <h2 class="sec-h">みくんたちって？</h2>
-    <p class="catch"><span class="nw">【<ruby>七尾<rt>ななお</rt></ruby>の<ruby>町<rt>まち</rt></ruby>にすむ、</span><span class="nw">ひらがなの<ruby>精霊<rt>せいれい</rt></ruby>】</span></p>
-    <div class="intro">
-      <p>み・わ・そ・やは、<span class="nw">ひらがなの<ruby>精霊<rt>せいれい</rt></ruby>です。</span>ふるさとは<ruby>能登<rt>のと</rt></ruby>。<ruby>最初<rt>さいしょ</rt></ruby>の4<ruby>人<rt>にん</rt></ruby>は、<ruby>七尾<rt>ななお</rt></ruby>の<ruby>御祓<rt>みそぎ</rt></ruby>・<ruby>和倉<rt>わくら</rt></ruby>・<ruby>袖ケ江<rt>そでがえ</rt></ruby>・<ruby>矢田郷<rt>やたごう</rt></ruby>の<ruby>子<rt>こ</rt></ruby>です。</p>
-      <p><ruby>能登<rt>のと</rt></ruby>の<ruby>田<rt>た</rt></ruby>んぼや<ruby>山<rt>やま</rt></ruby>や<ruby>海<rt>うみ</rt></ruby>は、<ruby>人<rt>ひと</rt></ruby>が<ruby>手入<rt>てい</rt></ruby>れを<ruby>続<rt>つづ</rt></ruby>けてきたから、<ruby>今<rt>いま</rt></ruby>もあります。4<ruby>人<rt>にん</rt></ruby>は、<ruby>見<rt>み</rt></ruby>つけに<ruby>来<rt>き</rt></ruby>てくれた<ruby>人<rt>ひと</rt></ruby>といっしょに、その<ruby>手入<rt>てい</rt></ruby>れをして<ruby>能登<rt>のと</rt></ruby>を<ruby>守<rt>まも</rt></ruby>っています。</p>
-      <p>4<ruby>人<rt>にん</rt></ruby>がしゃべれるのは、<ruby>自分<rt>じぶん</rt></ruby>の<ruby>字<rt>じ</rt></ruby>だけです。</p>
-    </div>
-  </div>
-</section>
 
 <!-- 段4 キャラクター -->
 <section class="sec" id="character">
   <div class="wrap">
     <h2 class="sec-h">キャラクター</h2>
+    <p class="lead">4<ruby>人<rt>にん</rt></ruby>は、<ruby>地区<rt>ちく</rt></ruby>の<ruby>名前<rt>なまえ</rt></ruby>の はじめの<ruby>字<rt>じ</rt></ruby>から<ruby>生<rt>う</rt></ruby>まれました。<span class="nw">しゃべれるのは、<ruby>自分<rt>じぶん</rt></ruby>の<ruby>字<rt>じ</rt></ruby>だけです。</span></p>
     <ul class="chara-tabs" role="tablist">
-      <li><button id="t-mi" role="tab" aria-controls="c-mi" aria-selected="true">み｜<ruby>御祓<rt>みそぎ</rt></ruby></button></li>
-      <li><button id="t-wa" role="tab" aria-controls="c-wa" aria-selected="false">わ｜<ruby>和倉<rt>わくら</rt></ruby></button></li>
-      <li><button id="t-so" role="tab" aria-controls="c-so" aria-selected="false">そ｜<ruby>袖ケ江<rt>そでがえ</rt></ruby></button></li>
-      <li><button id="t-ya" role="tab" aria-controls="c-ya" aria-selected="false">や｜<ruby>矢田郷<rt>やたごう</rt></ruby></button></li>
+      <li><button id="t-mi" role="tab" aria-controls="c-mi" aria-selected="true"><em>み</em>そぎ</button></li>
+      <li><button id="t-wa" role="tab" aria-controls="c-wa" aria-selected="false"><em>わ</em>くら</button></li>
+      <li><button id="t-so" role="tab" aria-controls="c-so" aria-selected="false"><em>そ</em>でがえ</button></li>
+      <li><button id="t-ya" role="tab" aria-controls="c-ya" aria-selected="false"><em>や</em>たごう</button></li>
     </ul>
 
     <div class="chara-panel" id="c-mi" role="tabpanel" aria-labelledby="t-mi">
@@ -402,8 +403,7 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
           <dt class="fuda">きもち</dt><dd>みつけて<ruby>欲<rt>ほ</rt></ruby>しい</dd>
           <dt class="fuda">いえることば</dt><dd>「み…！」</dd>
         </dl>
-        <p class="chara-desc">みつけて<ruby>欲<rt>ほ</rt></ruby>しいのに、<span class="nw">はずかしくて</span><ruby>自分<rt>じぶん</rt></ruby>からは<ruby>出<rt>で</rt></ruby>ていけません。のれんや<ruby>柱<rt>はしら</rt></ruby>のかげから<ruby>体<rt>からだ</rt></ruby>を<ruby>半分<rt>はんぶん</rt></ruby>だけ<ruby>出<rt>だ</rt></ruby>して、だれかが<ruby>気<rt>き</rt></ruby>づいてくれるのを<ruby>待<rt>ま</rt></ruby>っています。</p>
-        <p class="chara-find"><span class="fuda">みつけかた</span>のれんの<ruby>下<rt>した</rt></ruby>のほうと<ruby>柱<rt>はしら</rt></ruby>のかげを<ruby>見<rt>み</rt></ruby>てください。<ruby>体<rt>からだ</rt></ruby>が<ruby>半分<rt>はんぶん</rt></ruby>だけ<ruby>出<rt>で</rt></ruby>ていることがあります。</p>
+        <p class="chara-find"><span class="fuda">みつけかた</span><span class="nw">のれんの<ruby>下<rt>した</rt></ruby>のほうと</span><ruby>柱<rt>はしら</rt></ruby>のかげを<ruby>見<rt>み</rt></ruby>てください。<ruby>体<rt>からだ</rt></ruby>が<ruby>半分<rt>はんぶん</rt></ruby>だけ<ruby>出<rt>で</rt></ruby>ていることがあります。</p>
       </div>
     </div>
 
@@ -416,7 +416,6 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
           <dt class="fuda">きもち</dt><dd>わかった！／わからん？</dd>
           <dt class="fuda">いえることば</dt><dd>「わ…！」「わ…？」</dd>
         </dl>
-        <p class="chara-desc">わかると<ruby>腰<rt>こし</rt></ruby>に<ruby>手<rt>て</rt></ruby>を<ruby>当<rt>あ</rt></ruby>てて「わ…！」。わからないと<ruby>両手<rt>りょうて</rt></ruby>を<ruby>広<rt>ひろ</rt></ruby>げて「わ…？」。わからないことは、くわしい<ruby>人<rt>ひと</rt></ruby>のそばへ<ruby>行<rt>い</rt></ruby>ってたずねます。</p>
         <p class="chara-find"><span class="fuda">みつけかた</span><ruby>案内板<rt>あんないばん</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>で、<ruby>首<rt>くび</rt></ruby>をかしげていることがよくあります。</p>
       </div>
     </div>
@@ -430,7 +429,6 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
           <dt class="fuda">きもち</dt><dd>そわそわ</dd>
           <dt class="fuda">いえることば</dt><dd>「そ…」</dd>
         </dl>
-        <p class="chara-desc">いつも<ruby>何<rt>なに</rt></ruby>かが<ruby>心配<rt>しんぱい</rt></ruby>で、<ruby>体<rt>からだ</rt></ruby>が<ruby>小<rt>こ</rt></ruby>きざみにゆれています。お<ruby>祭<rt>まつ</rt></ruby>りは<ruby>大好<rt>だいす</rt></ruby>きですが、<ruby>前<rt>まえ</rt></ruby>の<ruby>日<rt>ひ</rt></ruby>はそわそわして<ruby>眠<rt>ねむ</rt></ruby>れません。</p>
         <p class="chara-find"><span class="fuda">みつけかた</span><ruby>何<rt>なに</rt></ruby>かが<ruby>小<rt>こ</rt></ruby>きざみにゆれて<ruby>見<rt>み</rt></ruby>えたら、そこにいます。</p>
       </div>
     </div>
@@ -444,7 +442,6 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
           <dt class="fuda">きもち</dt><dd>やってみる</dd>
           <dt class="fuda">いえることば</dt><dd>「や…！」</dd>
         </dl>
-        <p class="chara-desc">やりたいことがあると、<ruby>考<rt>かんが</rt></ruby>える<ruby>前<rt>まえ</rt></ruby>に<ruby>体<rt>からだ</rt></ruby>が<ruby>動<rt>うご</rt></ruby>きます。<ruby>走<rt>はし</rt></ruby>りだして3<ruby>歩<rt>ぽ</rt></ruby>でころんでも、すぐに「や…！」と<ruby>立<rt>た</rt></ruby>ち<ruby>上<rt>あ</rt></ruby>がります。</p>
         <p class="chara-find"><span class="fuda">みつけかた</span><ruby>朝早<rt>あさはや</rt></ruby>くから<ruby>外<rt>そと</rt></ruby>に<ruby>出<rt>で</rt></ruby>ているので、<ruby>朝<rt>あさ</rt></ruby>のうちがいちばん<ruby>会<rt>あ</rt></ruby>いやすいです。</p>
       </div>
     </div>
@@ -470,8 +467,8 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
   <div class="wrap"><div class="panel slim">
     <h2 class="sec-h">いっしょにやりたい方へ</h2>
     <div class="together">
-      <p>みくんたちを、七尾の人に愛されるキャラクターに育てて、みんなに七尾をもっと好きになってもらいたい。そのために、合同会社SandBoxConnectionsが育てています。</p>
-      <p>絵本づくり、地域の品物の紹介、取材などのご相談をお受けしています。</p>
+      <p>七尾の人に愛されるキャラクターに育てて、みんなに七尾をもっと好きになってもらいたい。合同会社SandBoxConnectionsが育てています。</p>
+      <p>絵本・地域の品物・取材のご相談をお受けしています。</p>
     </div>
   </div></div>
 </section>
