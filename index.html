@@ -134,6 +134,13 @@ html:not(.js) .map-note{display:none}
 .viz h4{margin:0 0 6px; font-weight:900; font-size:20px; line-height:1.8}
 .viz p{margin:0 0 16px}
 
+/* 段1.5 コンセプト（箱なし＝海の上に直接） */
+.concept .catch{max-width:860px; margin:0 auto 22px}
+.concept .intro{text-align:center}
+.chiku4{display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin:30px 0 0; padding:0; list-style:none}
+.chiku4 li{display:flex; align-items:baseline; gap:10px; background:#fff; border:3px solid var(--leaf); border-bottom:9px solid var(--c); border-radius:18px; padding:4px 22px 4px; font-weight:900; font-size:18px; line-height:1.8}
+.chiku4 em{font-style:normal; font-size:1.7em; line-height:1}
+
 /* 段3 みくんたちって？（箱なし＝海の上に直接） */
 .catch{font-size:30px; line-height:2; margin:0 0 28px; text-align:center; font-weight:900}
 .intro{max-width:720px; margin:0 auto}
@@ -277,6 +284,7 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
   <div class="wrap">
     <a class="logo" href="#top">みくんたち</a>
     <ul class="nav">
+      <li><a href="#concept">コンセプト</a></li>
       <li><a href="#play">あそびかた</a></li>
       <li><a href="#character">キャラクター</a></li>
       <li><a href="#news">おしらせ</a></li>
@@ -315,6 +323,23 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
   </a>
 </section>
 
+<!-- 段1.5 コンセプト（11/27 本人「TOPのすぐしたにくるのはコンセプト」）＝キャッチは本人の言葉（11/27「ゆたかで、ちょっぴり大変な能登・七尾のくらし」）・一言は11/26夕 -->
+<section class="sec concept" id="concept">
+  <div class="wrap">
+    <h2 class="sec-h">コンセプト</h2>
+    <p class="catch"><span class="nw">ゆたかで、ちょっぴり<ruby>大変<rt>たいへん</rt></ruby>な</span><span class="nw"><ruby>能登<rt>のと</rt></ruby>・<ruby>七尾<rt>ななお</rt></ruby>のくらし</span></p>
+    <div class="intro">
+      <p>みくんたちは、<span class="nw"><ruby>七尾市<rt>ななおし</rt></ruby>の<ruby>地区<rt>ちく</rt></ruby>の<ruby>名前<rt>なまえ</rt></ruby>から</span><span class="nw"><ruby>生<rt>う</rt></ruby>まれた、ひらがなの<ruby>子<rt>こ</rt></ruby>です。</span><span class="nw">4<ruby>人<rt>にん</rt></ruby>の<ruby>字<rt>じ</rt></ruby>は、すんでいる<ruby>地区<rt>ちく</rt></ruby>の<ruby>名前<rt>なまえ</rt></ruby>の はじめの1<ruby>字<rt>じ</rt></ruby>です。</span></p>
+    </div>
+    <ul class="chiku4">
+      <li style="--c:var(--ao)"><em>み</em><span><ruby>御祓<rt>みそぎ</rt></ruby></span></li>
+      <li style="--c:var(--murasaki)"><em>わ</em><span><ruby>和倉<rt>わくら</rt></ruby></span></li>
+      <li style="--c:var(--ki)"><em>そ</em><span><ruby>袖ケ江<rt>そでがえ</rt></ruby></span></li>
+      <li style="--c:var(--midori)"><em>や</em><span><ruby>矢田郷<rt>やたごう</rt></ruby></span></li>
+    </ul>
+  </div>
+</section>
+
 <!-- 段2 あそびかた -->
 <section class="sec" id="play">
   <img class="peek" src="img/chara-mi.png" alt="" aria-hidden="true">
@@ -323,7 +348,7 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
     <div class="play">
 
       <article class="play-card">
-        <h3 class="play-h"><span class="no">1</span><span><span class="verb">あいにいく</span>　スタンプラリー「ななおのなぞをおいかけ<ruby>隊<rt>たい</rt></ruby>」</span></h3>
+        <h3 class="play-h"><span class="no">1</span><span>スタンプラリー「ななおのなぞをおいかけ<ruby>隊<rt>たい</rt></ruby>」</span></h3>
         <p><ruby>七尾<rt>ななお</rt></ruby>の4<ruby>地区<rt>ちく</rt></ruby>・16か<ruby>所<rt>しょ</rt></ruby>で、なぞを<ruby>解<rt>と</rt></ruby>きながら<ruby>町<rt>まち</rt></ruby>を<ruby>歩<rt>ある</rt></ruby>くスタンプラリーです。</p>
         <dl class="info">
           <dt class="fuda">いつまで</dt><dd>2026<ruby>年<rt>ねん</rt></ruby>7<ruby>月<rt>がつ</rt></ruby>31<ruby>日<rt>にち</rt></ruby>から 12<ruby>月<rt>がつ</rt></ruby>20<ruby>日<rt>にち</rt></ruby>まで</dd>
@@ -341,11 +366,11 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
           </dl>
         </details>
         <p><span class="count">いま302<ruby>人<rt>にん</rt></ruby>が<ruby>参加<rt>さんか</rt></ruby>しています</span>（11<ruby>月<rt>がつ</rt></ruby>26<ruby>日<rt>にち</rt></ruby>）</p>
-        <p class="org"><ruby>主催<rt>しゅさい</rt></ruby>：<ruby>七尾<rt>ななお</rt></ruby><ruby>地域<rt>ちいき</rt></ruby>づくり<ruby>協<rt>きょう</rt></ruby><ruby>議<rt>ぎ</rt></ruby><ruby>会<rt>かい</rt></ruby>ネットワーク<ruby>会議<rt>かいぎ</rt></ruby>（<ruby>御祓<rt>みそぎ</rt></ruby>・<ruby>袖ケ江<rt>そでがえ</rt></ruby>・<ruby>矢田郷<rt>やたごう</rt></ruby>・<ruby>和倉<rt>わくら</rt></ruby>）<br><ruby>企画<rt>きかく</rt></ruby>・<ruby>運営<rt>うんえい</rt></ruby>：<ruby>合<rt>ごう</rt></ruby><ruby>同<rt>どう</rt></ruby><ruby>会<rt>がい</rt></ruby><ruby>社<rt>しゃ</rt></ruby>SandBoxConnections</p>
+        <p class="org"><ruby>主催<rt>しゅさい</rt></ruby>：<ruby>七尾<rt>ななお</rt></ruby><ruby>地域<rt>ちいき</rt></ruby>づくり<ruby>協<rt>きょう</rt></ruby><ruby>議<rt>ぎ</rt></ruby><ruby>会<rt>かい</rt></ruby>ネットワーク<ruby>会議<rt>かいぎ</rt></ruby>（<ruby>御祓<rt>みそぎ</rt></ruby>・<ruby>袖ケ江<rt>そでがえ</rt></ruby>・<ruby>矢田郷<rt>やたごう</rt></ruby>・<ruby>和倉<rt>わくら</rt></ruby>）</p>
       </article>
 
       <article class="play-card">
-        <h3 class="play-h"><span class="no">2</span><span><span class="verb">みる</span>　インスタグラム</span></h3>
+        <h3 class="play-h"><span class="no">2</span><span>インスタグラム</span></h3>
         <div class="series">
           <div>
             <h4>み<ruby>君<rt>くん</rt></ruby>を<ruby>探<rt>さが</rt></ruby>せ！</h4>
@@ -362,12 +387,17 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
         </div>
         <div class="flow" aria-label="インスタグラムの投稿">
           <div class="flow-track">
-            <a class="flow-card" href="https://www.instagram.com/770chiiki_network/" target="_blank" rel="noopener"><img src="img/ig-mi-05.jpg" alt="インスタの投稿「み君を探せ！」No.05" width="564" height="705"><b class="kind">み<ruby>君<rt>くん</rt></ruby>を<ruby>探<rt>さが</rt></ruby>せ！</b><span>No.05</span></a>
-            <a class="flow-card" href="https://www.instagram.com/770chiiki_network/" target="_blank" rel="noopener"><img src="img/ks-01.jpg" alt="協賛のご紹介 お好み焼 平野屋さん" width="600" height="750"><b class="kind ks"><ruby>協賛<rt>きょうさん</rt></ruby>のご<ruby>紹介<rt>しょうかい</rt></ruby></b><span>お<ruby>好<rt>この</rt></ruby>み<ruby>焼<rt>やき</rt></ruby> <ruby>平野屋<rt>ひらのや</rt></ruby>さん</span></a>
-            <a class="flow-card" href="https://www.instagram.com/770chiiki_network/" target="_blank" rel="noopener"><img src="img/ig-wa-01.jpg" alt="インスタの投稿「わ君のわからん」Q.01" width="564" height="705"><b class="kind">わ<ruby>君<rt>くん</rt></ruby>のわからん</b><span>Q.01</span></a>
+            <!-- 新しい順（み君を探せ！No.01は写っている山がラリーの答え＝12/20まで出さない／No.02・03は未保存）。協賛の3枚はまとめて並べる＝#02 コメダ七尾店・#03 みやけ食品はインスタ未投稿だが本人「表紙を載せていいよ」（11/27）＝リンクはアカウントのページ -->
+            <a class="flow-card" href="https://www.instagram.com/p/DgM9Y0SDMxJ/" target="_blank" rel="noopener"><img src="img/ig-wa-03.jpg" alt="インスタの投稿「わ君のわからん」Q.03" width="600" height="750"><b class="kind">わ<ruby>君<rt>くん</rt></ruby>のわからん</b><span>Q.03</span></a>
+            <a class="flow-card" href="https://www.instagram.com/p/DgCjAUvI6QX/" target="_blank" rel="noopener"><img src="img/ig-mi-07.jpg" alt="インスタの投稿「み君を探せ！」No.07" width="600" height="750"><b class="kind">み<ruby>君<rt>くん</rt></ruby>を<ruby>探<rt>さが</rt></ruby>せ！</b><span>No.07</span></a>
+            <a class="flow-card" href="https://www.instagram.com/p/Df4IoZDk6cL/" target="_blank" rel="noopener"><img src="img/ks-01.jpg" alt="協賛のご紹介 お好み焼 平野屋さん" width="600" height="750"><b class="kind ks"><ruby>協賛<rt>きょうさん</rt></ruby>のご<ruby>紹介<rt>しょうかい</rt></ruby></b><span>お<ruby>好<rt>この</rt></ruby>み<ruby>焼<rt>やき</rt></ruby> <ruby>平野屋<rt>ひらのや</rt></ruby>さん</span></a>
             <a class="flow-card" href="https://www.instagram.com/770chiiki_network/" target="_blank" rel="noopener"><img src="img/ks-02.jpg" alt="協賛のご紹介 コメダ珈琲店 七尾店さん" width="600" height="750"><b class="kind ks"><ruby>協賛<rt>きょうさん</rt></ruby>のご<ruby>紹介<rt>しょうかい</rt></ruby></b><span>コメダ<ruby>珈琲店<rt>こーひーてん</rt></ruby> <ruby>七尾店<rt>ななおてん</rt></ruby>さん</span></a>
-            <a class="flow-card" href="https://www.instagram.com/770chiiki_network/" target="_blank" rel="noopener"><img src="img/ig-mi-04.jpg" alt="インスタの投稿「み君を探せ！」No.04" width="564" height="705"><b class="kind">み<ruby>君<rt>くん</rt></ruby>を<ruby>探<rt>さが</rt></ruby>せ！</b><span>No.04</span></a>
             <a class="flow-card" href="https://www.instagram.com/770chiiki_network/" target="_blank" rel="noopener"><img src="img/ks-03.jpg" alt="協賛のご紹介 みやけ食品さん" width="600" height="750"><b class="kind ks"><ruby>協賛<rt>きょうさん</rt></ruby>のご<ruby>紹介<rt>しょうかい</rt></ruby></b><span>みやけ<ruby>食品<rt>しょくひん</rt></ruby>さん</span></a>
+            <a class="flow-card" href="https://www.instagram.com/p/DfwjElZFFhK/" target="_blank" rel="noopener"><img src="img/ig-wa-02.jpg" alt="インスタの投稿「わ君のわからん」Q.02" width="600" height="750"><b class="kind">わ<ruby>君<rt>くん</rt></ruby>のわからん</b><span>Q.02</span></a>
+            <a class="flow-card" href="https://www.instagram.com/p/DfmUyI3CFFO/" target="_blank" rel="noopener"><img src="img/ig-mi-06.jpg" alt="インスタの投稿「み君を探せ！」No.06" width="600" height="750"><b class="kind">み<ruby>君<rt>くん</rt></ruby>を<ruby>探<rt>さが</rt></ruby>せ！</b><span>No.06</span></a>
+            <a class="flow-card" href="https://www.instagram.com/p/DfekCDmiEbD/" target="_blank" rel="noopener"><img src="img/ig-wa-01.jpg" alt="インスタの投稿「わ君のわからん」Q.01" width="564" height="705"><b class="kind">わ<ruby>君<rt>くん</rt></ruby>のわからん</b><span>Q.01</span></a>
+            <a class="flow-card" href="https://www.instagram.com/p/DfZczbXFLSh/" target="_blank" rel="noopener"><img src="img/ig-mi-05.jpg" alt="インスタの投稿「み君を探せ！」No.05" width="564" height="705"><b class="kind">み<ruby>君<rt>くん</rt></ruby>を<ruby>探<rt>さが</rt></ruby>せ！</b><span>No.05</span></a>
+            <a class="flow-card" href="https://www.instagram.com/p/De9JvuMiCZM/" target="_blank" rel="noopener"><img src="img/ig-mi-04.jpg" alt="インスタの投稿「み君を探せ！」No.04" width="564" height="705"><b class="kind">み<ruby>君<rt>くん</rt></ruby>を<ruby>探<rt>さが</rt></ruby>せ！</b><span>No.04</span></a>
           </div>
         </div>
         <p class="shelf-note">「み」を<ruby>探<rt>さが</rt></ruby>してみてね。<ruby>答<rt>こた</rt></ruby>えはインスタで。</p>
@@ -471,8 +501,7 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
   <div class="wrap"><div class="panel slim">
     <h2 class="sec-h">いっしょにやりたい方へ</h2>
     <div class="together">
-      <p>みくんたちは、里山里海のくらしの豊かさと難しさを、ポップに伝えるキャラクターです。</p>
-      <p>七尾の人に愛されるキャラクターに育てて、みんなに七尾をもっと好きになってもらいたい。合同会社SandBoxConnectionsが育てています。</p>
+      <p>七尾の人に愛されるキャラクターに育てて、みんなに七尾をもっと好きになってもらいたいと思っています。</p>
       <p>絵本・地域の品物・取材のご相談をお受けしています。</p>
     </div>
   </div></div>
@@ -489,7 +518,6 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
       <li>運営：合同会社SandBoxConnections</li>
       <li>スタンプラリーとインスタグラム：七尾地域づくり協議会ネットワーク会議</li>
     </ul>
-    <p class="credit">デザイン：合同会社SandBoxConnections</p>
   </div></div>
 </footer>
 
@@ -523,7 +551,7 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
   tabs('.map [role="tab"]');
 
   /* 画面に入ったら、下からすべり込む（同じ並びの中は少しずつ遅らせる） */
-  var REVEAL = '.sec-h, .lead, .chara-tabs, .play-card, .series > div, .news li, .together p, .site-foot .foot-in';
+  var REVEAL = '.sec-h, .catch, .intro p, .chiku4 li, .lead, .chara-tabs, .play-card, .series > div, .news li, .together p, .site-foot .foot-in';
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(function(es){
       es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
