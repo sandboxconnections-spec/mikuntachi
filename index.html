@@ -79,6 +79,7 @@ ruby rt{font-size:.5em; letter-spacing:0; font-weight:700}
 .now strong{display:block; font-size:18px; font-weight:900; margin:6px 0 2px; line-height:1.7}
 .now .now-line{display:block; font-size:15px}
 .now .btn{margin-top:12px}
+.now{line-height:2} .now rt{line-height:1} /* 11/27 ルビのある行だけ広がらないように（なおさん「行間」） */
 
 /* 段の共通 */
 .sec{position:relative; padding:72px 0}
@@ -316,9 +317,9 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
 
   <a class="now" href="#play">
     <span class="now-label">いま あそべる</span>
-    <strong>スタンプラリー「ななおのなぞをおいかけ<ruby>隊<rt>たい</rt></ruby>」</strong>
+    <strong><span class="nw">スタンプラリー</span><span class="nw">「ななおのなぞをおいかけ<ruby>隊<rt>たい</rt></ruby>」</span></strong>
     <span class="now-line">12<ruby>月<rt>がつ</rt></ruby>20<ruby>日<rt>にち</rt></ruby>まで・いま302<ruby>人<rt>にん</rt></ruby>が<ruby>参加<rt>さんか</rt></ruby></span>
-    <span class="now-line">コミュニティセンターで<ruby>台紙<rt>だいし</rt></ruby>をもらってスタート</span>
+    <span class="now-line">コミュニティセンターで<ruby>台紙<rt>だいし</rt></ruby>を<span class="nw">もらってスタート</span></span>
     <span class="btn">あそびかたを<ruby>見<rt>み</rt></ruby>る</span>
   </a>
 </section>
