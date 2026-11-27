@@ -106,7 +106,7 @@ ruby rt{font-size:.5em; letter-spacing:0; font-weight:700}
 .count{display:inline-block; background:var(--ki); border-radius:999px; padding:0 14px; line-height:1.9}
 .btn{display:inline-block; background:var(--leaf); color:#fff; border-radius:999px; padding:10px 28px; text-decoration:none; font-weight:900; font-size:16px; line-height:1.6}
 .btn:hover{background:var(--leaf-dark)}
-.series{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:8px 0 28px}
+.series{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin:8px 0 28px}
 .series > div{border:3px solid var(--leaf); border-radius:14px; padding:20px 24px}
 .series h4{margin:0 0 6px; font-size:19px; line-height:1.8; font-weight:900}
 .series p{margin:0}
@@ -179,8 +179,39 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
 .site-foot ul{list-style:none; margin:0 0 16px; padding:0}
 .site-foot .credit{font-size:12px; margin:0}
 
+/* 横に流れる棚（インスタの投稿＋協賛のご紹介）＝2周ぶん並べて左へ流し続ける。乗せると止まる・つかんで投げられる */
+.flow{position:relative; margin:4px -64px 14px; overflow:hidden; cursor:grab; touch-action:pan-y; -webkit-user-select:none; user-select:none}
+.flow.dragging{cursor:grabbing}
+.flow-track{display:flex; gap:20px; width:max-content; padding:10px 64px 14px; will-change:transform}
+.flow-card{flex:0 0 auto; width:236px; display:block; text-decoration:none; background:#fff; border:3px solid var(--leaf); border-radius:14px; overflow:hidden}
+.flow-card img{width:100%; height:auto; pointer-events:none; -webkit-user-drag:none}
+.flow-card .kind{display:inline-block; margin:10px 0 0 12px; padding:0 10px; border-radius:999px; background:var(--leaf); color:#fff; font-size:12px; line-height:2; font-weight:900}
+.flow-card .kind.ks{background:var(--ki); color:var(--ink)}
+.flow-card span{display:block; padding:2px 12px 10px; font-weight:900; font-size:15px; line-height:1.8}
+
+/* なめらかな動き（ぬめぬめ）＝ばね cubic-bezier(.34,1.56,.64,1)／すべり cubic-bezier(.22,1,.36,1) */
+:root{--spring:cubic-bezier(.34,1.56,.64,1); --glide:cubic-bezier(.22,1,.36,1)}
+.btn, .nav a, .chara-tabs button, .flow-card, .now{transition:transform .55s var(--spring), background-color .3s, color .3s}
+.btn:hover, .nav a:hover, .chara-tabs button:hover{transform:translateY(-3px) scale(1.05)}
+.btn:active, .nav a:active, .chara-tabs button:active{transform:scale(.94); transition-duration:.12s}
+.flow-card:hover{transform:translateY(-8px) rotate(-1.5deg)}
+.now:hover{transform:translateY(-4px)}
+.js [data-reveal]{opacity:0; transform:translateY(46px); transition:opacity .9s var(--glide), transform 1.2s var(--glide); transition-delay:var(--d,0s)}
+.js [data-reveal].is-in{opacity:1; transform:none}
+.js .peek{translate:0 72%; transition:translate 1.3s var(--spring) .2s}
+.js .sec.is-in .peek{translate:0 0}
+@media (prefers-reduced-motion: reduce){
+  .js [data-reveal]{opacity:1; transform:none; transition:none}
+  .js .peek{translate:0 0; transition:none}
+  .btn, .nav a, .chara-tabs button, .flow-card, .now{transition:none}
+  .flow{overflow-x:auto; cursor:auto}
+}
+
 /* スマホ */
 @media (max-width:767px){
+  .flow{margin:4px -18px 12px}
+  .flow-track{padding:8px 18px 12px; gap:14px}
+  .flow-card{width:196px}
   .wrap{padding:0 12px}
   .site-head .wrap{display:block; padding-top:10px; padding-bottom:6px; min-height:0}
   .site-head .logo{display:none}
@@ -319,18 +350,25 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
           <div>
             <h4>み<ruby>君<rt>くん</rt></ruby>を<ruby>探<rt>さが</rt></ruby>せ！</h4>
             <p><ruby>写真<rt>しゃしん</rt></ruby>にかくれた「み」を<ruby>探<rt>さが</rt></ruby>す</p>
-            <span class="since">No.01（10<ruby>月<rt>がつ</rt></ruby>1<ruby>日<rt>にち</rt></ruby>）から<ruby>続<rt>つづ</rt></ruby>いています</span>
           </div>
           <div>
             <h4>わ<ruby>君<rt>くん</rt></ruby>のわからん</h4>
             <p><ruby>七尾<rt>ななお</rt></ruby>の3<ruby>択<rt>たく</rt></ruby>クイズ</p>
-            <span class="since">Q.01（11<ruby>月<rt>がつ</rt></ruby>8<ruby>日<rt>にち</rt></ruby>）から<ruby>続<rt>つづ</rt></ruby>いています</span>
+          </div>
+          <div>
+            <h4><ruby>協賛<rt>きょうさん</rt></ruby>のご<ruby>紹介<rt>しょうかい</rt></ruby></h4>
+            <p>スタンプラリーを<ruby>応援<rt>おうえん</rt></ruby>してくれている お<ruby>店<rt>みせ</rt></ruby>と<ruby>会社<rt>かいしゃ</rt></ruby></p>
           </div>
         </div>
-        <div class="shelf">
-          <a href="https://www.instagram.com/770chiiki_network/" target="_blank" rel="noopener"><img src="img/ig-mi-05.jpg" alt="インスタの投稿「み君を探せ！」No.05" width="564" height="705" loading="lazy"><span>み<ruby>君<rt>くん</rt></ruby>を<ruby>探<rt>さが</rt></ruby>せ！ No.05</span></a>
-          <a href="https://www.instagram.com/770chiiki_network/" target="_blank" rel="noopener"><img src="img/ig-mi-04.jpg" alt="インスタの投稿「み君を探せ！」No.04" width="564" height="705" loading="lazy"><span>み<ruby>君<rt>くん</rt></ruby>を<ruby>探<rt>さが</rt></ruby>せ！ No.04</span></a>
-          <a href="https://www.instagram.com/770chiiki_network/" target="_blank" rel="noopener"><img src="img/ig-wa-01.jpg" alt="インスタの投稿「わ君のわからん」Q.01" width="564" height="705" loading="lazy"><span>わ<ruby>君<rt>くん</rt></ruby>のわからん Q.01</span></a>
+        <div class="flow" aria-label="インスタグラムの投稿">
+          <div class="flow-track">
+            <a class="flow-card" href="https://www.instagram.com/770chiiki_network/" target="_blank" rel="noopener"><img src="img/ig-mi-05.jpg" alt="インスタの投稿「み君を探せ！」No.05" width="564" height="705"><b class="kind">み<ruby>君<rt>くん</rt></ruby>を<ruby>探<rt>さが</rt></ruby>せ！</b><span>No.05</span></a>
+            <a class="flow-card" href="https://www.instagram.com/770chiiki_network/" target="_blank" rel="noopener"><img src="img/ks-01.jpg" alt="協賛のご紹介 お好み焼 平野屋さん" width="600" height="750"><b class="kind ks"><ruby>協賛<rt>きょうさん</rt></ruby>のご<ruby>紹介<rt>しょうかい</rt></ruby></b><span>お<ruby>好<rt>この</rt></ruby>み<ruby>焼<rt>やき</rt></ruby> <ruby>平野屋<rt>ひらのや</rt></ruby>さん</span></a>
+            <a class="flow-card" href="https://www.instagram.com/770chiiki_network/" target="_blank" rel="noopener"><img src="img/ig-wa-01.jpg" alt="インスタの投稿「わ君のわからん」Q.01" width="564" height="705"><b class="kind">わ<ruby>君<rt>くん</rt></ruby>のわからん</b><span>Q.01</span></a>
+            <a class="flow-card" href="https://www.instagram.com/770chiiki_network/" target="_blank" rel="noopener"><img src="img/ks-02.jpg" alt="協賛のご紹介 コメダ珈琲店 七尾店さん" width="600" height="750"><b class="kind ks"><ruby>協賛<rt>きょうさん</rt></ruby>のご<ruby>紹介<rt>しょうかい</rt></ruby></b><span>コメダ<ruby>珈琲店<rt>こーひーてん</rt></ruby> <ruby>七尾店<rt>ななおてん</rt></ruby>さん</span></a>
+            <a class="flow-card" href="https://www.instagram.com/770chiiki_network/" target="_blank" rel="noopener"><img src="img/ig-mi-04.jpg" alt="インスタの投稿「み君を探せ！」No.04" width="564" height="705"><b class="kind">み<ruby>君<rt>くん</rt></ruby>を<ruby>探<rt>さが</rt></ruby>せ！</b><span>No.04</span></a>
+            <a class="flow-card" href="https://www.instagram.com/770chiiki_network/" target="_blank" rel="noopener"><img src="img/ks-03.jpg" alt="協賛のご紹介 みやけ食品さん" width="600" height="750"><b class="kind ks"><ruby>協賛<rt>きょうさん</rt></ruby>のご<ruby>紹介<rt>しょうかい</rt></ruby></b><span>みやけ<ruby>食品<rt>しょくひん</rt></ruby>さん</span></a>
+          </div>
         </div>
         <p class="shelf-note">「み」を<ruby>探<rt>さが</rt></ruby>してみてね。<ruby>答<rt>こた</rt></ruby>えはインスタで。</p>
         <a class="btn" href="https://www.instagram.com/770chiiki_network/" target="_blank" rel="noopener">@770chiiki_network をフォローする</a>
@@ -457,22 +495,145 @@ html:not(.js) .chara-panel + .chara-panel{margin-top:80px}
 
 <script>
 (function(){
+  var REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var FINE = window.matchMedia('(pointer: fine)').matches;
+  var WIDE = window.matchMedia('(min-width: 768px)');
+  var SPRING = 'cubic-bezier(.34,1.56,.64,1)', GLIDE = 'cubic-bezier(.22,1,.36,1)';
+
+  /* タブ（キャラクター）＝切り替えると島がはずんで出てくる */
   function tabs(selector){
     var list = document.querySelectorAll(selector);
-    function show(id){
+    function show(id, anim){
       list.forEach(function(t){
         var on = t.getAttribute('aria-controls') === id;
         t.setAttribute('aria-selected', on ? 'true' : 'false');
         document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
       });
+      if (!anim || REDUCE) return;
+      var p = document.getElementById(id), st = p.querySelector('.chara-stage'), cd = p.querySelector('.chara-card');
+      if (st && st.animate) st.animate([{ transform: 'translateY(60px) scale(.86)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 800, easing: SPRING });
+      if (cd && cd.animate) cd.animate([{ transform: 'translateX(36px)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 700, delay: 90, easing: GLIDE, fill: 'backwards' });
     }
     list.forEach(function(t){
-      t.addEventListener('click', function(){ show(t.getAttribute('aria-controls')); });
+      t.addEventListener('click', function(){ show(t.getAttribute('aria-controls'), true); });
     });
-    if (list.length) show(list[0].getAttribute('aria-controls'));
+    if (list.length) show(list[0].getAttribute('aria-controls'), false);
   }
   tabs('.chara-tabs [role="tab"]');
   tabs('.map [role="tab"]');
+
+  /* 画面に入ったら、下からすべり込む（同じ並びの中は少しずつ遅らせる） */
+  var REVEAL = '.sec-h, .lead, .chara-tabs, .play-card, .series > div, .news li, .together p, .site-foot .foot-in';
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.06 });
+    document.querySelectorAll(REVEAL).forEach(function(el){
+      el.setAttribute('data-reveal', '');
+      var sib = Array.prototype.filter.call(el.parentNode.children, function(c){ return c.matches(REVEAL); });
+      el.style.setProperty('--d', (Math.max(0, sib.indexOf(el)) * 0.09).toFixed(2) + 's');
+      io.observe(el);
+    });
+    document.querySelectorAll('.sec').forEach(function(el){ io.observe(el); });   // 箱のかげのキャラが、下から半分出てくる
+  } else {
+    document.querySelectorAll('.sec').forEach(function(el){ el.classList.add('is-in'); });
+  }
+
+  /* 横に流れる棚＝2周ぶん並べてつなぎ目なく。乗せると するっと止まり、つかんで投げると勢いがついて、ゆっくり元の流れに戻る */
+  document.querySelectorAll('.flow').forEach(function(root){
+    var track = root.querySelector('.flow-track');
+    root.querySelectorAll('a').forEach(function(a){ a.setAttribute('draggable', 'false'); });
+    if (REDUCE) return;   // 動きを減らす設定＝流さない（横にスクロールして見る）
+    Array.prototype.slice.call(track.children).forEach(function(el){
+      var c = el.cloneNode(true); c.setAttribute('aria-hidden', 'true'); c.setAttribute('tabindex', '-1'); track.appendChild(c);
+    });
+    var x = 0, v = 0, BASE = -0.55, mul = 1, hover = false, drag = null, last = performance.now(), blockClick = false;
+    root.addEventListener('pointerenter', function(e){ if (e.pointerType === 'mouse') hover = true; });
+    root.addEventListener('pointerleave', function(){ hover = false; });
+    root.addEventListener('focusin', function(){ hover = true; });
+    root.addEventListener('focusout', function(){ hover = false; });
+    root.addEventListener('pointerdown', function(e){
+      if (e.button !== 0) return;
+      drag = { x0: e.clientX, xs: x, lx: e.clientX, lt: performance.now(), moved: false, id: e.pointerId };
+    });
+    root.addEventListener('pointermove', function(e){
+      if (!drag) return;
+      var dx = e.clientX - drag.x0;
+      if (!drag.moved && Math.abs(dx) > 6) { drag.moved = true; root.classList.add('dragging'); try { root.setPointerCapture(drag.id); } catch (_) {} }
+      if (!drag.moved) return;
+      var now = performance.now();
+      v = (e.clientX - drag.lx) / Math.max(8, now - drag.lt) * 16.7;
+      drag.lx = e.clientX; drag.lt = now; x = drag.xs + dx;
+    });
+    function end(){
+      if (!drag) return;
+      if (drag.moved) { blockClick = true; setTimeout(function(){ blockClick = false; }, 60); }
+      root.classList.remove('dragging'); drag = null;
+    }
+    root.addEventListener('pointerup', end); root.addEventListener('pointercancel', end);
+    root.addEventListener('click', function(e){ if (blockClick) { e.preventDefault(); e.stopPropagation(); } }, true);
+    function tick(now){
+      var dt = Math.min(50, now - last) / 16.7; last = now;
+      if (!drag) {
+        mul += ((hover ? 0 : 1) - mul) * 0.06 * dt;      // 止まるときも動き出すときも、するっと
+        v += (BASE * mul - v) * 0.045 * dt;              // 投げた勢いが、ゆっくり元の流れに戻る
+        x += v * dt;
+      }
+      var h = track.scrollWidth / 2;
+      if (h > 0) { x = x % h; if (x > 0) x -= h; }
+      track.style.transform = 'translate3d(' + x.toFixed(2) + 'px,0,0)';
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  });
+
+  if (REDUCE) return;
+
+  /* トップの島＝スクロールとマウスに合わせて、それぞれちがう速さでゆれる（PCの幅だけ） */
+  var isles = document.querySelectorAll('.top .isle'), RATE = [0.10, 0.20, 0.15, 0.07];
+  var cy = window.scrollY, mx = 0, my = 0, tmx = 0, tmy = 0;
+  window.addEventListener('pointermove', function(e){ if (e.pointerType !== 'mouse') return; tmx = e.clientX / innerWidth - 0.5; tmy = e.clientY / innerHeight - 0.5; }, { passive: true });
+  (function loop(){
+    if (WIDE.matches && window.scrollY < 1400) {
+      cy += (window.scrollY - cy) * 0.1; mx += (tmx - mx) * 0.05; my += (tmy - my) * 0.05;
+      isles.forEach(function(el, i){
+        var r = RATE[i % RATE.length], s = i % 2 ? 1 : -1;
+        el.style.transform = 'translate3d(' + (mx * 26 * s).toFixed(2) + 'px,' + (-cy * r + my * 18).toFixed(2) + 'px,0)';
+      });
+    } else if (!WIDE.matches) { isles.forEach(function(el){ el.style.transform = ''; }); }
+    requestAnimationFrame(loop);
+  })();
+
+  /* ホイールのスクロールに慣性（PCのマウスだけ）。キーボード・つまみ・指で動いたときは、その場所に合わせる */
+  if (FINE) {
+    var root = document.documentElement, target = window.scrollY, cur = window.scrollY, running = false;
+    root.style.scrollBehavior = 'auto';
+    var maxY = function(){ return root.scrollHeight - window.innerHeight; };
+    function step(){
+      cur += (target - cur) * 0.1;
+      if (Math.abs(target - cur) < 0.5) cur = target;
+      window.scrollTo(0, cur);
+      if (cur !== target) requestAnimationFrame(step); else running = false;
+    }
+    function go(y){ target = Math.max(0, Math.min(maxY(), y)); if (!running) { running = true; requestAnimationFrame(step); } }
+    window.addEventListener('wheel', function(e){
+      if (e.ctrlKey || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;   // 拡大と横のスクロールはそのまま
+      e.preventDefault();
+      if (!running) target = cur = window.scrollY;
+      go(target + e.deltaY * (e.deltaMode === 1 ? 32 : 1));
+    }, { passive: false });
+    window.addEventListener('scroll', function(){ if (!running) target = cur = window.scrollY; }, { passive: true });
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click', function(e){
+        var id = a.getAttribute('href'), el = id.length > 1 && document.querySelector(id);
+        if (!el) return;
+        e.preventDefault();
+        if (!running) target = cur = window.scrollY;
+        go(el.getBoundingClientRect().top + window.scrollY - 8);
+        history.replaceState(null, '', id);
+      });
+    });
+  }
 })();
 </script>
 </body>
